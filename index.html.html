@@ -1,0 +1,1542 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STIT Al-Anshar Tanjung Selor - Portal Akademik</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#" onclick="tampilkanHalaman('beranda')">
+                <img src="STIT LOGO (1).png" alt="STIT LOGO (1)" height="40" class="d-inline-block align-text-top me-2" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+                <i class="fas fa-mosque me-2" style="display:none;"></i>STIT Al-Anshar
+            </a>
+            <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#" onclick="tampilkanHalaman('beranda')">Beranda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" onclick="tampilkanHalaman('profil')">Profil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" onclick="tampilkanHalaman('layanan')">Layanan</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" onclick="tampilkanHalaman('berita')">Berita</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" onclick="tampilkanHalaman('data')">Data</a></li>
+                    <li class="nav-item ms-3" id="loginBtn">
+                        <a class="btn btn-light text-success fw-bold" data-bs-toggle="modal" data-bs-target="#loginModal">
+                            <i class="fas fa-sign-in-alt"></i> Login
+                        </a>
+                    </li>
+                    <li class="nav-item ms-3" id="userBtn" style="display:none;">
+                        <span class="btn btn-success fw-bold">
+                            <i class="fas fa-user"></i> <span id="userName">Mahasiswa</span>
+                        </span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HALAMAN BERANDA -->
+    <div id="halamanBeranda">
+        <!-- Hero Section -->
+        <section id="beranda" class="hero-section">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-8 text-center text-lg-start">
+                        <h1 class="display-3 fw-bold">Sekolah Tinggi Ilmu Tarbiyah</h1>
+                        <h2 class="h3 mb-4">Al-Anshar Tanjung Selor</h2>
+                        <p class="lead mb-4">Mencetak generasi Qur'ani yang berakhlakul karimah dan berkompeten dalam bidang pendidikan</p>
+                        <div class="d-flex gap-3 flex-wrap justify-content-center justify-content-lg-start">
+                            <a href="#" class="btn btn-success btn-lg fw-bold" onclick="tampilkanHalaman('profil')">
+                                <i class="fas fa-university me-2"></i>Tentang Kami
+                            </a>
+                            <a href="#" class="btn btn-outline-light btn-lg fw-bold" onclick="tampilkanHalaman('pendaftaran')">
+                                <i class="fas fa-user-plus me-2"></i>Daftar Sekarang
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 text-center mt-4 mt-lg-0">
+                        <div class="hero-logo">
+                            <img src="STIT LOGO (1).png" alt="Logo" height="150" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                            <i class="fas fa-mosque" style="display:none; font-size: 120px;"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats-section py-5">
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-6 col-md-3 mb-3">
+                        <div class="stat-item">
+                            <i class="fas fa-user-graduate fa-2x mb-2"></i>
+                            <h3 class="fw-bold">95</h3>
+                            <p>Mahasiswa Aktif</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3 mb-3">
+                        <div class="stat-item">
+                            <i class="fas fa-chalkboard-teacher fa-2x mb-2"></i>
+                            <h3 class="fw-bold">12</h3>
+                            <p>Dosen & Tutor</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3 mb-3">
+                        <div class="stat-item">
+                            <i class="fas fa-users fa-2x mb-2"></i>
+                            <h3 class="fw-bold">50</h3>
+                            <p>Alumni</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3 mb-3">
+                        <div class="stat-item">
+                            <i class="fas fa-calendar-check fa-2x mb-2"></i>
+                            <h3 class="fw-bold">2015</h3>
+                            <p>Tahun Berdiri</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Profil Section -->
+        <section id="profil" class="py-5">
+            <div class="container">
+                <h2 class="section-title">Profil STIT Al-Anshar</h2>
+                <div class="row mt-4">
+                    <div class="col-md-6 mb-4">
+                        <div class="card feature-card h-100">
+                            <div class="card-body">
+                                <h4><i class="fas fa-bullseye text-success me-2"></i>Visi</h4>
+                                <p>Menjadi lembaga pendidikan tinggi Islam yang menghasilkan lulusan yang berakhlakul karimah, mandiri, dan kompeten dalam bidang ilmu tarbiyah serta mampu menjawab tantangan global.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="card feature-card h-100">
+                            <div class="card-body">
+                                <h4><i class="fas fa-list-ul text-success me-2"></i>Misi</h4>
+                                <ul class="list-unstyled">
+                                    <li><i class="fas fa-check text-success me-2"></i>Menyelenggarakan pendidikan tinggi Islam berbasis AQIDAH Ahlussunnah Wal Jama'ah</li>
+                                    <li><i class="fas fa-check text-success me-2"></i>Mengembangkan ilmu pengetahuan dan teknologi Islami</li>
+                                    <li><i class="fas fa-check text-success me-2"></i>Mencetak tenaga pendidik profesional</li>
+                                    <li><i class="fas fa-check text-success me-2"></i>Meningkatkan penelitian berbasis竹林</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Program Studi -->
+                <h3 class="mt-5 mb-4 fw-bold">Program Studi</h3>
+                <div class="row g-4">
+                    <div class="col-md-6 mx-auto">
+                          <div class="prodi-card">
+                            <i class="fas fa-quran"></i>
+                            <h5>Pendidikan Agama Islam (PAI)</h5>
+                            <span class="badge bg-success">Terakreditasi B</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Layanan Section -->
+        <section id="layanan" class="py-5 bg-light">
+            <div class="container">
+                <h2 class="section-title">Layanan Akademik</h2>
+                <div class="row g-4 mt-3">
+                    <!-- KRS -->
+                    <div class="col-md-4 col-sm-6">
+                        <div class="card feature-card text-center">
+                            <div class="icon-box"><i class="fas fa-calendar-check"></i></div>
+                            <h4>KRS Online</h4>
+                            <p>Isi Kartu Rencana Studi semester ini dengan mudah</p>
+                            <button class="btn btn-success" onclick="bukaLayanan('KRS')">
+                                <i class="fas fa-arrow-right me-1"></i> Buka
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Nilai & KHS -->
+                    <div class="col-md-4 col-sm-6">
+                        <div class="card feature-card text-center">
+                            <div class="icon-box"><i class="fas fa-chart-pie"></i></div>
+                            <h4>Nilai & KHS</h4>
+                            <p>Lihat transkrip nilai akademik semester</p>
+                            <button class="btn btn-success" onclick="bukaLayanan('Nilai')">
+                                <i class="fas fa-arrow-right me-1"></i> Lihat
+                            </button>
+                        </div>
+                    </div>
+                    <!-- UKT -->
+                    <div class="col-md-4 col-sm-6">
+                        <div class="card feature-card text-center">
+                            <div class="icon-box"><i class="fas fa-credit-card"></i></div>
+                            <h4>Pembayaran UKT</h4>
+                            <p>Bayar uang kuliah via bank transfer</p>
+                            <button class="btn btn-success" onclick="bukaLayanan('UKT')">
+                                <i class="fas fa-arrow-right me-1"></i> Bayar
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Perpustakaan -->
+                    <div class="col-md-4 col-sm-6">
+                        <div class="card feature-card text-center">
+                            <div class="icon-box"><i class="fas fa-book-open"></i></div>
+                            <h4>Perpustakaan</h4>
+                            <p>Akses e-book dan jurnal ilmiah</p>
+                            <button class="btn btn-success" onclick="bukaLayanan('Perpus')">
+                                <i class="fas fa-arrow-right me-1"></i> Akses
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Wisuda -->
+                    <div class="col-md-4 col-sm-6">
+                        <div class="card feature-card text-center">
+                            <div class="icon-box"><i class="fas fa-user-graduate"></i></div>
+                            <h4>Wisuda</h4>
+                            <p>Pendaftaran & informasi wisuda</p>
+                            <button class="btn btn-success" onclick="bukaLayanan('Wisuda')">
+                                <i class="fas fa-arrow-right me-1"></i> Daftar
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Skripsi -->
+                    <div class="col-md-4 col-sm-6">
+                        <div class="card feature-card text-center">
+                            <div class="icon-box"><i class="fas fa-file-alt"></i></div>
+                            <h4>Skripsi</h4>
+                            <p>Pengelolaan tugas akhir & judul</p>
+                            <button class="btn btn-success" onclick="bukaLayanan('Skripsi')">
+                                <i class="fas fa-arrow-right me-1"></i> Ajukan
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Berita Section -->
+        <section id="berita" class="py-5">
+            <div class="container">
+                <h2 class="section-title">Berita Terkini</h2>
+                <div class="row g-4 mt-3">
+                    <div class="col-md-4">
+                        <div class="card berita-card h-100">
+                            <div class="card-img-top position-relative">
+                                <div class="badge-overlay">
+                                    <span class="badge bg-danger">Akademik</span>
+                                </div>
+                                <div class="berita-icon"><i class="fas fa-calendar-alt"></i></div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Jadwal UTS Semester Ganjil 2024/2025</h5>
+                                <p class="text-muted small"><i class="far fa-clock me-1"></i>15 Oktober 2024</p>
+                                <p class="card-text">Jadwal ujian tengah semester telah released. Mahasiswa diharapkan mempersiapkan diri dengan baik.</p>
+                                <a href="#" class="text-success fw-bold">Baca Selengkapnya →</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card berita-card h-100">
+                            <div class="card-img-top position-relative">
+                                <div class="badge-overlay">
+                                    <span class="badge bg-success">Event</span>
+                                </div>
+                                <div class="berita-icon"><i class="fas fa-microphone"></i></div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Seminar Nasional Pendidikan Islam</h5>
+                                <p class="text-muted small"><i class="far fa-clock me-1"></i>10 Oktober 2024</p>
+                                <p class="card-text">STIT Al-Anshar akan mengadakan seminar nasional dengan tema "Pendidikan Islam di Era Digital".</p>
+                                <a href="#" class="text-success fw-bold">Baca Selengkapnya →</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card berita-card h-100">
+                            <div class="card-img-top position-relative">
+                                <div class="badge-overlay">
+                                    <span class="badge bg-warning text-dark">Beasiswa</span>
+                                </div>
+                                <div class="berita-icon"><i class="fas fa-graduation-cap"></i></div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Pendaftaran Beasiswa Pemda Kaltara</h5>
+                                <p class="text-muted small"><i class="far fa-clock me-1"></i>5 Oktober 2024</p>
+                                <p class="card-text">Pendaftaran beasiswa pemerintah daerah Kalimantan Utara telah dibuka. Syarat dan ketentuan berlaku.</p>
+                                <a href="#" class="text-success fw-bold">Baca Selengkapnya →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-4">
+                    <a href="#" class="btn btn-outline-success btn-lg">
+                        <i class="fas fa-newspaper me-2"></i>Lihat Semua Berita
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Data Section -->
+        <section id="data" class="py-5 bg-light">
+            <div class="container">
+                <h2 class="section-title">Data Kampus</h2>
+                
+                <!-- Nav Tabs -->
+                <ul class="nav nav-pills mb-4 justify-content-center" id="dataTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="mahasiswa-tab" data-bs-toggle="tab" data-bs-target="#mahasiswa" type="button">
+                            <i class="fas fa-user-graduate me-2"></i>Mahasiswa
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="dosen-tab" data-bs-toggle="tab" data-bs-target="#dosen" type="button">
+                            <i class="fas fa-chalkboard-teacher me-2"></i>Dosen
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="alumni-tab" data-bs-toggle="tab" data-bs-target="#alumni" type="button">
+                            <i class="fas fa-users me-2"></i>Alumni
+                        </button>
+                    </li>
+                </ul>
+
+                <!-- Tab Content -->
+                <div class="tab-content" id="dataTabContent">
+                    <!-- Data Mahasiswa -->
+                    <div class="tab-pane fade show active" id="mahasiswa" role="tabpanel">
+                        <div class="card">
+                            <div class="card-header bg-success text-white">
+                                <h5 class="mb-0"><i class="fas fa-list me-2"></i>Daftar Mahasiswa Aktif</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-hover">
+                                        <thead class="table-success">
+                                            <tr>
+                                                <th>No</th>
+                                                <th>NIM</th>
+                                                <th>Nama Mahasiswa</th>
+                                                <th>Prodi</th>
+                                                <th>Semester</th>
+                                                <th>Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>2021.001</td>
+                                                <td>Ahmad Saleh</td>
+                                                <td>PAI</td>
+                                                <td>7</td>
+                                                <td><span class="badge bg-success">Aktif</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>2021.002</td>
+                                                <td>Fatimatul Zahra</td>
+                                                <td>PAI</td>
+                                                <td>7</td>
+                                                <td><span class="badge bg-success">Aktif</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>2022.001</td>
+                                                <td>Muhammad Rizki</td>
+                                                <td>PAI</td>
+                                                <td>5</td>
+                                                <td><span class="badge bg-success">Aktif</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>4</td>
+                                                <td>2022.002</td>
+                                                <td>Siti Aminah</td>
+                                                <td>PAI</td>
+                                                <td>5</td>
+                                                <td><span class="badge bg-success">Aktif</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>5</td>
+                                                <td>2023.001</td>
+                                                <td>Abdul Hakim</td>
+                                                <td>PAI</td>
+                                                <td>3</td>
+                                                <td><span class="badge bg-success">Aktif</span></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Data Dosen -->
+                    <div class="tab-pane fade" id="dosen" role="tabpanel">
+                        <div class="card">
+                            <div class="card-header bg-success text-white">
+                                <h5 class="mb-0"><i class="fas fa-list me-2"></i>Daftar Dosen & Tenaga Pendidik</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-hover">
+                                        <thead class="table-success">
+                                            <tr>
+                                                <th>No</th>
+                                                <th>NIDN/NIDK</th>
+                                                <th>Nama Dosen</th>
+                                                <th>Prodi</th>
+                                                <th>Jabatan</th>
+                                                <th>Bidang Keilmuan</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>1102097201</td>
+                                                <td>Risnamajasari, M.Pd</td>
+                                                <td>PAI</td>
+                                                <td>Guru Besar</td>
+                                                <td>Pendidikan Agama Islam</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>1102097202</td>
+                                                <td>Rusdiana, M.Pd</td>
+                                                <td>PBA</td>
+                                                <td>Lektor Kepala</td>
+                                                <td>Bahasa Arab</td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>1102097203</td>
+                                                <td>Muhammad Mattori, S.H., M.Ag</td>
+                                                <td>PAI</td>
+                                                <td>Lektor</td>
+                                                <td>Pendidikan Matematika</td>
+                                            </tr>
+                                            <tr>
+                                                <td>4</td>
+                                                <td>1102097204</td>
+                                                <td>Muhammad Rizal, S.H., M.Kn</td>
+                                                <td>PIAUD</td>
+                                                <td>Lektor</td>
+                                                <td>Pendidikan Anak</td>
+                                            </tr>
+                                            <tr>
+                                                <td>5</td>
+                                                <td>1102097205</td>
+                                                <td>Risnamajasari, M.Pd</td>
+                                                <td>PAI</td>
+                                                <td>Asisten Ahli</td>
+                                                <td>Sejarah Islam</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Data Alumni -->
+                    <div class="tab-pane fade" id="alumni" role="tabpanel">
+                        <div class="card">
+                            <div class="card-header bg-success text-white">
+                                <h5 class="mb-0"><i class="fas fa-list me-2"></i>Data Alumni & Lowongan Kerja</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-hover">
+                                        <thead class="table-success">
+                                            <tr>
+                                                <th>No</th>
+                                                <th>Nama Alumni</th>
+                                                <th>Tahun Lulus</th>
+                                                <th>Prodi</th>
+                                                <th>Pekerjaan</th>
+                                                <th>Instansi</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>Andi Pratama, S.Pd.I</td>
+                                                <td>2020</td>
+                                                <td>PAI</td>
+                                                <td>Guru MAPEL</td>
+                                                <td>SMA Negeri 1 Tanjung Selor</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>Khadijah, M.Pd</td>
+                                                <td>2019</td>
+                                                <td>PIAUD</td>
+                                                <td>Kepala Sekolah</td>
+                                                <td>TK Islam Al-Anshar</td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>Yusuf Hamzah, S.Hum</td>
+                                                <td>2021</td>
+                                                <td>PBA</td>
+                                                <td>Dosen Bahasa Arab</td>
+                                                <td>IAIN Bulungan</td>
+                                            </tr>
+                                            <tr>
+                                                <td>4</td>
+                                                <td>Nurul Hidayah, S.Pd</td>
+                                                <td>2022</td>
+                                                <td>PAI</td>
+                                                <td>Guru Honor</td>
+                                                <td>MTSN 1 Bulungan</td>
+                                            </tr>
+                                            <tr>
+                                                <td>5</td>
+                                                <td>Ibrahim Khalil, M.A</td>
+                                                <td>2018</td>
+                                                <td>PAI</td>
+                                                <td>Penyuluh Agama</td>
+                                                <td>Kantor Kemenag Kaltara</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Lowongan Kerja -->
+                        <div class="card mt-3">
+                            <div class="card-header bg-warning text-dark">
+                                <h5 class="mb-0"><i class="fas fa-briefcase me-2"></i>Lowongan Kerja Terbaru</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <div class="lowongan-item">
+                                            <h6><i class="fas fa-angle-right text-success me-2"></i>Guru Bahasa Arab</h6>
+                                            <p class="mb-1 text-muted">SMA Islam Al-Hidayah Tanjung Selor</p>
+                                            <small class="text-success">Gaji: Rp 3.500.000 - Rp 5.000.000</small>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <div class="lowongan-item">
+                                            <h6><i class="fas fa-angle-right text-success me-2"></i>Tenaga Administrasi Kampus</h6>
+                                            <p class="mb-1 text-muted">STIT Al-Anshar Tanjung Selor</p>
+                                            <small class="text-success">Gaji: Rp 2.500.000 - Rp 3.500.000</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pendaftaran -->
+        <section id="pendaftaran" class="py-5">
+            <div class="container">
+                <h2 class="section-title">Pendaftaran Mahasiswa Baru</h2>
+                <div class="row mt-4 align-items-center">
+                    <div class="col-lg-6 mb-4">
+                        <div class="card border-success">
+                            <div class="card-body">
+                                <h4 class="text-success mb-3"><i class="fas fa-calendar-check me-2"></i>Jadwal Pendaftaran</h4>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        Gelombang I
+                                        <span class="badge bg-success rounded-pill">15 Jan - 30 Apr 2024</span>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        Gelombang II
+                                        <span class="badge bg-warning rounded-pill">1 Mei - 31 Jul 2024</span>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        Gelombang III
+                                        <span class="badge bg-danger rounded-pill">1 Agt - 31 Agt 2024</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="card border-success">
+                            <div class="card-body">
+                                <h4 class="text-success mb-3"><i class="fas fa-clipboard-check me-2"></i>Persyaratan</h4>
+                                <ul class="list-unstyled">
+                                    <li><i class="fas fa-check-circle text-success me-2"></i>Ijazah SMA/SMK/MA asli</li>
+                                    <li><i class="fas fa-check-circle text-success me-2"></i>Transkrip Nilai</li>
+                                    <li><i class="fas fa-check-circle text-success me-2"></i>Foto Copy KTP</li>
+                                    <li><i class="fas fa-check-circle text-success me-2"></i>Pas Foto 3x4 (4 lembar)</li>
+                                    <li><i class="fas fa-check-circle text-success me-2"></i>Akta Kelahiran</li>
+                                    <li><i class="fas fa-check-circle text-success me-2"></i>Surat Kesehatan</li>
+                                </ul>
+                                <a href="#" class="btn btn-success btn-lg w-100 mt-3" onclick="alert('Fitur pendaftaran online akan segera tersedia. Silakan datang langsung ke kampus.')">
+                                    <i class="fas fa-user-plus me-2"></i>Daftar Online
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- HALAMAN KRS -->
+    <section id="halamanKRS" class="py-5" style="display: none; background: #f8f9fa; min-height: 100vh;">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <div>
+                    <h2 class="fw-bold text-success"><i class="fas fa-calendar-check me-2"></i>Kartu Rencana Studi (KRS)</h2>
+                    <p class="text-muted">Semester Ganjil 2024/2025</p>
+                </div>
+                <button class="btn btn-danger" onclick="tutupLayanan()">
+                    <i class="fas fa-times me-1"></i> Tutup
+                </button>
+            </div>
+
+            <!-- Info Mahasiswa -->
+            <div class="card mb-4 border-success">
+                <div class="card-header bg-success text-white">
+                    <i class="fas fa-user me-2"></i>Data Mahasiswa
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-3 mb-2"><strong>Nama:</strong> <span id="krsNama">-</span></div>
+                        <div class="col-md-3 mb-2"><strong>NIM:</strong> <span id="krsNIM">-</span></div>
+                        <div class="col-md-3 mb-2"><strong>Prodi:</strong> <span>Pendidikan Agama Islam</span></div>
+                        <div class="col-md-3 mb-2"><strong>IPK:</strong> <span class="text-success fw-bold">3.75</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tabel MK -->
+            <div class="card border-success">
+                <div class="card-body p-0">
+                    <table class="table table-bordered table-hover mb-0" id="tableKRS">
+                        <thead class="table-success">
+                            <tr>
+                                <th><input type="checkbox" id="selectAllKRS" onchange="toggleAllKRS()"></th>
+                                <th>Kode</th>
+                                <th>Mata Kuliah</th>
+                                <th>SKS</th>
+                                <th>Dosen</th>
+                                <th>Jadwal</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><input type="checkbox" class="krs-check" value="3" checked></td>
+                                <td>PAI401</td>
+                                <td>Metodologi Penelitian Pendidikan</td>
+                                <td>3</td>
+                                <td>Prof.Muhammad Rizal, M.Kn</td>
+                                <td>Senin 07:00-09:30</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" class="krs-check" value="3" checked></td>
+                                <td>PAI402</td>
+                                <td>Pembelajaran Kooperatif</td>
+                                <td>3</td>
+                                <td>Nur Aziza Annisa A, M.Pd</td>
+                                <td>Senin 10:00-12:30</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" class="krs-check" value="2"></td>
+                                <td>PAI403</td>
+                                <td>Pendidikan Karakter</td>
+                                <td>2</td>
+                                <td>Ulil Aydi, M.Pd</td>
+                                <td>Selasa 08:00-09:40</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" class="krs-check" value="3"></td>
+                                <td>PAI404</td>
+                                <td>Media Pembelajaran</td>
+                                <td>3</td>
+                                <td>Muhammad Mattori, S.H,. M.Ag</td>
+                                <td>Selasa 10:00-12:30</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" class="krs-check" value="2"></td>
+                                <td>BI401</td>
+                                <td>Bahasa Indonesia</td>
+                                <td>2</td>
+                                <td>Rusdiana, M.Pd</td>
+                                <td>Rabu 13:00-14:40</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" class="krs-check" value="3"></td>
+                                <td>PAI405</td>
+                                <td>Evaluasi Pembelajaran</td>
+                                <td>3</td>
+                                <td>Risnamajasari, M.Pd</td>
+                                <td>Kamis 07:00-09:30</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr class="table-success">
+                                <th colspan="2" class="text-end">Total SKS:</th>
+                                <th colspan="4" class="text-success fw-bold"><span id="totalSKS">6</span> SKS</th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Tombol Aksi -->
+            <div class="mt-4 text-end">
+                <button class="btn btn-outline-primary" onclick="cetakKRS()">
+                    <i class="fas fa-print me-1"></i> Cetak KRS
+                </button>
+                <button class="btn btn-success" onclick="simpanKRS()">
+                    <i class="fas fa-save me-1"></i> Simpan KRS
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- HALAMAN NILAI -->
+    <section id="halamanNilai" class="py-5" style="display: none; background: #f8f9fa; min-height: 100vh;">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <div>
+                    <h2 class="fw-bold text-success"><i class="fas fa-chart-pie me-2"></i>Nilai & KHS</h2>
+                    <p class="text-muted">Transkrip Nilai Akademik</p>
+                </div>
+                <button class="btn btn-danger" onclick="tutupLayanan()">
+                    <i class="fas fa-times me-1"></i> Tutup
+                </button>
+            </div>
+
+            <!-- Info Mahasiswa -->
+            <div class="card mb-4 border-success">
+                <div class="card-header bg-success text-white">
+                    <i class="fas fa-user me-2"></i>Data Mahasiswa
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-3 mb-2"><strong>Nama:</strong> <span id="nilaiNama">-</span></div>
+                        <div class="col-md-3 mb-2"><strong>NIM:</strong> <span id="nilaiNIM">-</span></div>
+                        <div class="col-md-3 mb-2"><strong>Prodi:</strong> <span>PAI</span></div>
+                        <div class="col-md-3 mb-2"><strong>IPK:</strong> <span class="text-success fw-bold">3.75</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tabel Nilai -->
+            <div class="card border-success">
+                <div class="card-header bg-success text-white">
+                    <h5 class="mb-0"><i class="fas fa-list me-2"></i>Transkrip Nilai Semester</h5>
+                </div>
+                <div class="card-body p-0">
+                    <table class="table table-bordered mb-0">
+                        <thead class="table-success">
+                            <tr>
+                                <th>Semester</th>
+                                <th>Kode</th>
+                                <th>Mata Kuliah</th>
+                                <th>SKS</th>
+                                <th>Nilai</th>
+                                <th>Huruf</th>
+                                <th>Angka</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td rowspan="3">1</td><td>PAI101</td><td>Pendidikan Agama Islam I</td><td>3</td><td>A</td><td>A</td><td>4.00</td></tr>
+                            <tr><td>PAI102</td><td>Ilmu Tajwid</td><td>2</td><td>A-</td><td>A-</td><td>3.70</td></tr>
+                            <tr><td>KU101</td><td>Pendidikan Kewarganegaraan</td><td>2</td><td>B+</td><td>B+</td><td>3.30</td></tr>
+                            <tr><td rowspan="3">2</td><td>PAI201</td><td>Pendidikan Agama Islam II</td><td>3</td><td>A</td><td>A</td><td>4.00</td></tr>
+                            <tr><td>PAI202</td><td>Bahasa Arab I</td><td>2</td><td>B+</td><td>B+</td><td>3.30</td></tr>
+                            <tr><td>KU201</td><td>Bahasa Indonesia</td><td>2</td><td>A-</td><td>A-</td><td>3.70</td></tr>
+                            <tr><td rowspan="3">3</td><td>PAI301</td><td>Pendidikan Agama Islam III</td><td>3</td><td>A</td><td>A</td><td>4.00</td></tr>
+                            <tr><td>PAI302</td><td>Pembelajaran Mikro</td><td>2</td><td>A</td><td>A</td><td>4.00</td></tr>
+                            <tr><td>KU301</td><td>Statistik Pendidikan</td><td>2</td><td>B</td><td>B</td><td>3.00</td></tr>
+                        </tbody>
+                        <tfoot>
+                            <tr class="table-success">
+                                <th colspan="3" class="text-end">Total:</th>
+                                <th>23</th>
+                                <th colspan="3" class="text-success fw-bold">IPK: 3.75</th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+
+            <div class="mt-4 text-end">
+                <button class="btn btn-success" onclick="alert('KHS berhasil diunduh!')">
+                    <i class="fas fa-download me-1"></i> Unduh KHS
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- HALAMAN UKT -->
+    <section id="halamanUKT" class="py-5" style="display: none; background: #f8f9fa; min-height: 100vh;">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <div>
+                    <h2 class="fw-bold text-success"><i class="fas fa-credit-card me-2"></i>Pembayaran UKT</h2>
+                    <p class="text-muted">Uang Kuliah Tunggal Semester Ganjil 2024/2025</p>
+                </div>
+                <button class="btn btn-danger" onclick="tutupLayanan()">
+                    <i class="fas fa-times me-1"></i> Tutup
+                </button>
+            </div>
+
+            <!-- Info Tagihan -->
+            <div class="card mb-4 border-success">
+                <div class="card-header bg-success text-white">
+                    <i class="fas fa-file-invoice me-2"></i>Tagihan UKT
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p><strong>Nama:</strong> <span id="uktNama">-</span></p>
+                            <p><strong>NIM:</strong> <span id="uktNIM">-</span></p>
+                            <p><strong>Prodi:</strong> Pendidikan Agama Islam</p>
+                        </div>
+                        <div class="col-md-6 text-md-end">
+                            <p><strong>Semester:</strong> Ganjil 2025/2026</p>
+                            <p><strong>Status:</strong> <span class="badge bg-warning">Belum Lunas</span></p>
+                            <h3 class="text-success fw-bold">Rp 2.100.000/h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Form Pembayaran -->
+            <div class="card border-success">
+                <div class="card-header bg-success text-white">
+                    <h5 class="mb-0"><i class="fas fa-money-bill-wave me-2"></i>Form Pembayaran</h5>
+                </div>
+                <div class="card-body">
+                    <form id="formUKT" onsubmit="simpanPembayaran(event)">
+                        <div class="mb-3">
+                            <label class="form-label">Metode Pembayaran</label>
+                            <select class="form-select" id="metodeBayar" required>
+                                <option value="">Pilih Metode</option>
+                                <option value="bni">BNI - Transfer</option>
+                                <option value="bri">BRI - Transfer</option>
+                                <option value="bni">BSI - Transfer</option>
+                                <option value="tunai">Bayar Tunai (Kampus)</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Nomor Rekening Pengirim</label>
+                            <input type="text" class="form-control" id="noRek" placeholder="Masukkan nomor rekening" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Nama Pengirim</label>
+                            <input type="text" class="form-control" id="namaPengirim" placeholder="Masukkan nama rekening pengirim" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Jumlah Pembayaran</label>
+                            <input type="number" class="form-control" id="jumlahBayar" value="2500000" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Tanggal Transfer</label>
+                            <input type="date" class="form-control" id="tglBayar" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Bukti Transfer (Foto)</label>
+                            <input type="file" class="form-control" accept="image/*">
+                        </div>
+                        <div class="text-end">
+                            <button type="submit" class="btn btn-success">
+                                <i class="fas fa-check me-1"></i> Konfirmasi Pembayaran
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HALAMAN PERPUSTAKAAN -->
+    <section id="halamanPerpus" class="py-5" style="display: none; background: #f8f9fa; min-height: 100vh;">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <div>
+                    <h2 class="fw-bold text-success"><i class="fas fa-book-open me-2"></i>Perpustakaan Digital</h2>
+                    <p class="text-muted">Akses E-Book dan Jurnal Ilmiah</p>
+                </div>
+                <button class="btn btn-danger" onclick="tutupLayanan()">
+                    <i class="fas fa-times me-1"></i> Tutup
+                </button>
+            </div>
+
+            <!-- Pencarian -->
+            <div class="card mb-4 border-success">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" placeholder="Cari judul buku, jurnal, atau artikel...">
+                        </div>
+                        <div class="col-md-4">
+                            <select class="form-select">
+                                <option>Semua Kategori</option>
+                                <option>Buku</option>
+                                <option>Jurnal</option>
+                                <option>Skripsi</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Koleksi Buku -->
+            <div class="row g-4">
+                <div class="col-md-3">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-book fa-3x text-success mb-3"></i>
+                            <h6>Buku Pendidikan</h6>
+                            <p class="text-muted small">125 Judul</p>
+                            <button class="btn btn-sm btn-success" onclick="alert('Membuka koleksi buku pendidikan...')">Buka</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-quran fa-3x text-success mb-3"></i>
+                            <h6>Buku Agama</h6>
+                            <p class="text-muted small">89 Judul</p>
+                            <button class="btn btn-sm btn-success" onclick="alert('Membuka koleksi buku agama...')">Buka</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-file-alt fa-3x text-success mb-3"></i>
+                            <h6>Jurnal Ilmiah</h6>
+                            <p class="text-muted small">45 Judul</p>
+                            <button class="btn btn-sm btn-success" onclick="alert('Membuka koleksi jurnal ilmiah...')">Buka</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-graduation-cap fa-3x text-success mb-3"></i>
+                            <h6>Skripsi Alumni</h6>
+                            <p class="text-muted small">150 Judul</p>
+                            <button class="btn btn-sm btn-success" onclick="alert('Membuka koleksi skripsi...')">Buka</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Status Peminjaman -->
+            <div class="card mt-4 border-success">
+                <div class="card-header bg-success text-white">
+                    <h5 class="mb-0"><i class="fas fa-bookmark me-2"></i>Status Peminjaman Saya</h5>
+                </div>
+                <div class="card-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Judul</th>
+                                <th>Tgl Pinjam</th>
+                                <th>Tgl Kembali</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Metodologi Penelitian Pendidikan</td>
+                                <td>10 Okt 2024</td>
+                                <td>24 Okt 2024</td>
+                                <td><span class="badge bg-success">Dipinjam</span></td>
+                            </tr>
+                            <tr>
+                                <td>Pembelajaran Kooperatif</td>
+                                <td>5 Okt 2024</td>
+                                <td>19 Okt 2024</td>
+                                <td><span class="badge bg-danger">Terlambat</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HALAMAN WISUDA -->
+    <section id="halamanWisuda" class="py-5" style="display: none; background: #f8f9fa; min-height: 100vh;">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <div>
+                    <h2 class="fw-bold text-success"><i class="fas fa-user-graduate me-2"></i>Pendaftaran Wisuda</h2>
+                    <p class="text-muted">Wisuda ke-XII STIT Al-Anshar Tanjung Selor</p>
+                </div>
+                <button class="btn btn-danger" onclick="tutupLayanan()">
+                    <i class="fas fa-times me-1"></i> Tutup
+                </button>
+            </div>
+
+            <!-- Info Wisuda -->
+            <div class="alert alert-info">
+                <h5><i class="fas fa-info-circle me-2"></i>Informasi Wisuda</h5>
+                <p class="mb-0"><strong>Tanggal:</strong> 15 Desember 2024<br><strong>Tempat:</strong> Aula STIT Al-Anshar<br><strong>Biaya:</strong> Rp 1.500.000</p>
+            </div>
+
+            <!-- Form Pendaftaran -->
+            <div class="card border-success">
+                <div class="card-header bg-success text-white">
+                    <h5 class="mb-0"><i class="fas fa-clipboard-list me-2"></i>Formulir Pendaftaran Wisuda</h5>
+                </div>
+                <div class="card-body">
+                    <form id="formWisuda" onsubmit="daftarWisuda(event)">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Nama Lengkap</label>
+                                <input type="text" class="form-control" id="wisudaNama" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">NIM</label>
+                                <input type="text" class="form-control" id="wisudaNIM" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Program Studi</label>
+                                <select class="form-select" required>
+                                    <option value="">Pilih Prodi</option>
+                                    <option>Pendidikan Agama Islam (PAI)</option>
+                                    <option>Pendidikan Bahasa Arab</option>
+                                    <option>PIAUD</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Tahun Lulus</label>
+                                <input type="number" class="form-control" value="2024" required>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Nomor Telepon</label>
+                            <input type="tel" class="form-control" placeholder="08xxxxxxxxxx" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-control" placeholder="email@example.com" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Alamat</label>
+                            <textarea class="form-control" rows="2" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Ukuran Toga</label>
+                            <select class="form-select" required>
+                                <option value="">Pilih Ukuran</option>
+                                <option>S (Tinggi < 155cm)</option>
+                                <option>M (Tinggi 155-165cm)</option>
+                                <option>L (Tinggi 165-175cm)</option>
+                                <option>XL (Tinggi > 175cm)</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Nama Orang Tua</label>
+                            <input type="text" class="form-control" required>
+                        </div>
+                        <div class="text-end">
+                            <button type="submit" class="btn btn-success">
+                                <i class="fas fa-paper-plane me-1"></i> Daftar Wisuda
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HALAMAN SKRIPSI -->
+    <section id="halamanSkripsi" class="py-5" style="display: none; background: #f8f9fa; min-height: 100vh;">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <div>
+                    <h2 class="fw-bold text-success"><i class="fas fa-file-alt me-2"></i>Pengelolaan Skripsi</h2>
+                    <p class="text-muted">Pengajuan Judul & Bimbingan Skripsi</p>
+                </div>
+                <button class="btn btn-danger" onclick="tutupLayanan()">
+                    <i class="fas fa-times me-1"></i> Tutup
+                </button>
+            </div>
+
+            <!-- Nav Tabs -->
+            <ul class="nav nav-pills mb-4" id="skripsiTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#ajuanJudul" type="button">
+                        Ajukan Judul
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#bimbingan" type="button">
+                        Bimbingan
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#statusSkripsi" type="button">
+                        Status
+                    </button>
+                </li>
+            </ul>
+
+            <!-- Tab Content -->
+            <div class="tab-content">
+                <!-- Ajukan Judul -->
+                <div class="tab-pane fade show active" id="ajuanJudul" role="tabpanel">
+                    <div class="card border-success">
+                        <div class="card-header bg-success text-white">
+                            <h5 class="mb-0"><i class="fas fa-plus-circle me-2"></i>Form Pengajuan Judul Skripsi</h5>
+                        </div>
+                        <div class="card-body">
+                            <form id="formSkripsi" onsubmit="ajukanSkripsi(event)">
+                                <div class="mb-3">
+                                    <label class="form-label">Nama Mahasiswa</label>
+                                    <input type="text" class="form-control" id="skripsiNama" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">NIM</label>
+                                    <input type="text" class="form-control" id="skripsiNIM" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Dosen Pembimbing</label>
+                                    <select class="form-select" required>
+                                        <option value="">Pilih Dosen</option>
+                                        <option>Dr. H. Abdul Majid, M.Pd.I</option>
+                                        <option>Dr. Hj. Siti Rahayu, M.Ag</option>
+                                        <option>Muhammad Taqiyuddin, M.Pd</option>
+                                        <option>Hj. Fatimah, M.PI</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Judul Skripsi yang Diusulkan</label>
+                                    <textarea class="form-control" rows="3" placeholder="Masukkan judul skripsi..." required></textarea>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Abstrak</label>
+                                    <textarea class="form-control" rows="4" placeholder="Tuliskan abstrak singkat..." required></textarea>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Kata Kunci</label>
+                                    <input type="text" class="form-control" placeholder="Pisahkan dengan koma" required>
+                                </div>
+                                <div class="text-end">
+                                    <button type="submit" class="btn btn-success">
+                                        <i class="fas fa-paper-plane me-1"></i> Ajukan Judul
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bimbingan -->
+                <div class="tab-pane fade" id="bimbingan" role="tabpanel">
+                    <div class="card border-success">
+                        <div class="card-header bg-success text-white">
+                            <h5 class="mb-0"><i class="fas fa-comments me-2"></i>Jadwal Bimbingan</h5>
+                        </div>
+                        <div class="card-body">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>No</th>
+                                        <th>Dosen Pembimbing</th>
+                                        <th>Hari</th>
+                                        <th>Jam</th>
+                                        <th>Ruangan</th>
+                                        <th>Aksi</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Risnamajasari, M.Pd</td>
+                                        <td>Senin</td>
+                                        <td>10:00-12:00</td>
+                                        <td>Ruang 101</td>
+                                        <td><button class="btn btn-sm btn-success" onclick="alert('Mengajukan jadwal bimbingan...')">Booking</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>Rusdiana, M.Pd</td>
+                                        <td>Selasa</td>
+                                        <td>13:00-15:00</td>
+                                        <td>Ruang 102</td>
+                                        <td><button class="btn btn-sm btn-success" onclick="alert('Mengajukan jadwal bimbingan...')">Booking</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>Muhammad Mattori, S.H., M.Ag</td>
+                                        <td>Rabu</td>
+                                        <td>08:00-10:00</td>
+                                        <td>Ruang 103</td>
+                                        <td><button class="btn btn-sm btn-success" onclick="alert('Mengajukan jadwal bimbingan...')">Booking</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Status -->
+                <div class="tab-pane fade" id="statusSkripsi" role="tabpanel">
+                    <div class="card border-success">
+                        <div class="card-header bg-success text-white">
+                            <h5 class="mb-0"><i class="fas fa-tasks me-2"></i>Status Skripsi</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>Judul</th>
+                                            <th>Pembimbing</th>
+                                            <th>Progress</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Pengaruh Metode Pembelajaran...</td>
+                                            <td>Dr. H. Abdul Majid</td>
+                                            <td>
+                                                <div class="progress" style="height: 20px;">
+                                                    <div class="progress-bar bg-success" style="width: 75%;">75%</div>
+                                                </div>
+                                            </td>
+                                            <td><span class="badge bg-success">Bimbingan</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <h5 class="text-warning"><i class="fas fa-mosque me-2"></i>STIT Al-Anshar</h5>
+                    <p class="small">Sekolah Tinggi Ilmu Tarbiyah Al-Anshar Tanjung Selor adalah lembaga pendidikan tinggi Islam.</p>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5 class="text-warning">Tautan Cepat</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light" onclick="tampilkanHalaman('beranda')">Beranda</a></li>
+                        <li><a href="#" class="text-light" onclick="tampilkanHalaman('profil')">Profil</a></li>
+                        <li><a href="#" class="text-light" onclick="tampilkanHalaman('layanan')">Layanan</a></li>
+                        <li><a href="#" class="text-light" onclick="tampilkanHalaman('berita')">Berita</a></li>
+                        <li><a href="#" class="text-light" onclick="tampilkanHalaman('data')">Data Kampus</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5 class="text-warning">Kontak</h5>
+                    <ul class="list-unstyled small">
+                        <li><i class="fas fa-map-marker-alt me-2"></i>Jl. Jendral Sudirman No. 45 Tanjung Selor, Kalimantan Utara</li>
+                        <li><i class="fas fa-phone me-2"></i>(0552) 21234</li>
+                        <li><i class="fas fa-envelope me-2"></i>info@stit-alanshar.ac.id</li>
+                        <li><i class="fas fa-globe me-2"></i>www.stit-alanshar.ac.id</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="bg-light">
+            <div class="text-center">
+                <p class="mb-0"><i class="fas fa-copyright me-1"></i> 2026 STIT Al-Anshar Tanjung Selor. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL LOGIN -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-success text-white">
+                    <h5 class="modal-title"><i class="fas fa-sign-in-alt me-2"></i>Login SIAKAD</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="loginForm" onsubmit="prosesLogin(event)">
+                        <div class="mb-3">
+                            <label class="form-label">Username / NIM</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                <input type="text" class="form-control" id="username" placeholder="Masukkan NIM" required>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Password</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                                <input type="password" class="form-control" id="password" placeholder="Masukkan Password" required>
+                            </div>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="rememberMe">
+                            <label class="form-check-label" for="rememberMe">Ingat saya</label>
+                        </div>
+                        <button type="submit" class="btn btn-success w-100 fw-bold" id="btnMasuk">
+                            <i class="fas fa-sign-in-alt me-2"></i>Masuk Sistem
+                        </button>
+                    </form>
+                    <div class="text-center mt-3">
+                        <small class="text-muted">Username: mahasiswa / Password: 123456</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.jss"></script>
+    
+    <!-- JavaScript Functions -->
+    <script>
+        // ========== SISTEM LOGIN ==========
+        let isLoggedIn = false;
+        let currentUser = '';
+        
+        function prosesLogin(e) {
+            e.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const btnMasuk = document.getElementById('btnMasuk');
+            
+            // Loading
+            btnMasuk.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Loading...';
+            btnMasuk.disabled = true;
+            
+            setTimeout(() => {
+                if (username && password) {
+                    isLoggedIn = true;
+                    currentUser = username;
+                    
+                    // Update UI
+                    document.getElementById('loginBtn').style.display = 'none';
+                    document.getElementById('userBtn').style.display = 'block';
+                    document.getElementById('userName').textContent = username;
+                    
+                    // Simpan ke localStorage
+                    localStorage.setItem('isLoggedIn', 'true');
+                    localStorage.setItem('currentUser', username);
+                    
+                    // Tutup modal
+                    const modal = bootstrap.Modal.getInstance(document.getElementById('loginModal'));
+                    modal.hide();
+                    
+                    // Reset form
+                    document.getElementById('loginForm').reset();
+                    btnMasuk.innerHTML = '<i class="fas fa-sign-in-alt me-2"></i>Masuk Sistem';
+                    btnMasuk.disabled = false;
+                    
+                    alert('Login berhasil! Selamat datang, ' + username);
+                } else {
+                    alert('Username dan password salah!');
+                    btnMasuk.innerHTML = '<i class="fas fa-sign-in-alt me-2"></i>Masuk Sistem';
+                    btnMasuk.disabled = false;
+                }
+            }, 1000);
+        }
+        
+        // Cek login saat load
+        window.onload = function() {
+            if (localStorage.getItem('isLoggedIn') === 'true') {
+                isLoggedIn = true;
+                currentUser = localStorage.getItem('currentUser');
+                document.getElementById('loginBtn').style.display = 'none';
+                document.getElementById('userBtn').style.display = 'block';
+                document.getElementById('userName').textContent = currentUser;
+            }
+        }
+        
+        // ========== NAVIGASI HALAMAN ==========
+        function tampilkanHalaman(halaman) {
+            // Semua halaman disembunyikan dulu
+            document.getElementById('halamanBeranda').style.display = 'none';
+            document.getElementById('halamanKRS').style.display = 'none';
+            document.getElementById('halamanNilai').style.display = 'none';
+            document.getElementById('halamanUKT').style.display = 'none';
+            document.getElementById('halamanPerpus').style.display = 'none';
+            document.getElementById('halamanWisuda').style.display = 'none';
+            document.getElementById('halamanSkripsi').style.display = 'none';
+            document.querySelector('footer').style.display = 'none';
+            
+            // Tampilkan footer untuk halaman beranda
+            if (halaman === 'beranda') {
+                document.getElementById('halamanBeranda').style.display = 'block';
+                document.querySelector('footer').style.display = 'block';
+            } else if (halaman === 'profil') {
+                document.getElementById('halamanBeranda').style.display = 'block';
+                document.querySelector('footer').style.display = 'block';
+                document.getElementById('profil').scrollIntoView({behavior: 'smooth'});
+            } else if (halaman === 'layanan') {
+                document.getElementById('halamanBeranda').style.display = 'block';
+                document.querySelector('footer').style.display = 'block';
+                document.getElementById('layanan').scrollIntoView({behavior: 'smooth'});
+            } else if (halaman === 'berita') {
+                document.getElementById('halamanBeranda').style.display = 'block';
+                document.querySelector('footer').style.display = 'block';
+                setTimeout(function() {
+                    const beritaElement = document.getElementById('berita');
+                    if (beritaElement) {
+                        beritaElement.scrollIntoView({behavior: 'smooth', block: 'start'});
+                    }
+                }, 100);
+            } else if (halaman === 'data') {
+                document.getElementById('halamanBeranda').style.display = 'block';
+                document.querySelector('footer').style.display = 'block';
+                setTimeout(function() {
+                    const dataElement = document.getElementById('data');
+                    if (dataElement) {
+                        dataElement.scrollIntoView({behavior: 'smooth', block: 'start'});
+                    }
+                }, 100);
+            } else if (halaman === 'pendaftaran') {
+                document.getElementById('halamanBeranda').style.display = 'block';
+                document.querySelector('footer').style.display = 'block';
+                document.getElementById('pendaftaran').scrollIntoView({behavior: 'smooth'});
+            }
+            
+            window.scrollTo(0, 0);
+        }
+        
+        // ========== BUKA LAYANAN ==========
+        function bukaLayanan(layanan) {
+            if (!isLoggedIn) {
+                const modal = new bootstrap.Modal(document.getElementById('loginModal'));
+                modal.show();
+                alert('Silakan login terlebih dahulu untuk mengakses layanan!');
+                return;
+            }
+            
+            // Semua halaman disembunyikan
+            document.getElementById('halamanBeranda').style.display = 'none';
+            document.getElementById('halamanKRS').style.display = 'none';
+            document.getElementById('halamanNilai').style.display = 'none';
+            document.getElementById('halamanUKT').style.display = 'none';
+            document.getElementById('halamanPerpus').style.display = 'none';
+            document.getElementById('halamanWisuda').style.display = 'none';
+            document.getElementById('halamanSkripsi').style.display = 'none';
+            document.querySelector('footer').style.display = 'none';
+            
+            // Isi data mahasiswa
+            const user = currentUser || 'Mahasiswa';
+            const nim = '2021.' + Math.floor(Math.random() * 9000);
+            
+            // Tampilkan halaman yang dipilih
+            if (layanan === 'KRS') {
+                document.getElementById('halamanKRS').style.display = 'block';
+                document.getElementById('krsNama').textContent = user;
+                document.getElementById('krsNIM').textContent = nim;
+            } else if (layanan === 'Nilai') {
+                document.getElementById('halamanNilai').style.display = 'block';
+                document.getElementById('nilaiNama').textContent = user;
+                document.getElementById('nilaiNIM').textContent = nim;
+            } else if (layanan === 'UKT') {
+                document.getElementById('halamanUKT').style.display = 'block';
+                document.getElementById('uktNama').textContent = user;
+                document.getElementById('uktNIM').textContent = nim;
+            } else if (layanan === 'Perpus') {
+                document.getElementById('halamanPerpus').style.display = 'block';
+            } else if (layanan === 'Wisuda') {
+                document.getElementById('halamanWisuda').style.display = 'block';
+                document.getElementById('wisudaNama').value = user;
+                document.getElementById('wisudaNIM').value = nim;
+            } else if (layanan === 'Skripsi') {
+                document.getElementById('halamanSkripsi').style.display = 'block';
+                document.getElementById('skripsiNama').value = user;
+                document.getElementById('skripsiNIM').value = nim;
+            }
+            
+            window.scrollTo(0, 0);
+        }
+        
+        // ========== TUTUP LAYANAN ==========
+        function tutupLayanan() {
+            document.getElementById('halamanKRS').style.display = 'none';
+            document.getElementById('halamanNilai').style.display = 'none';
+            document.getElementById('halamanUKT').style.display = 'none';
+            document.getElementById('halamanPerpus').style.display = 'none';
+            document.getElementById('halamanWisuda').style.display = 'none';
+            document.getElementById('halamanSkripsi').style.display = 'none';
+            document.getElementById('halamanBeranda').style.display = 'block';
+            document.querySelector('footer').style.display = 'block';
+            window.scrollTo(0, 0);
+        }
+        
+        // ========== FUNGSI KRS ==========
+        function toggleAllKRS() {
+            const selectAll = document.getElementById('selectAllKRS');
+            const checkboxes = document.querySelectorAll('.krs-check');
+            checkboxes.forEach(cb => cb.checked = selectAll.checked);
+            hitungTotalSKS();
+        }
+        
+        function hitungTotalSKS() {
+            const checkboxes = document.querySelectorAll('.krs-check:checked');
+            let total = 0;
+            checkboxes.forEach(cb => total += parseInt(cb.value));
+            document.getElementById('totalSKS').textContent = total;
+        }
+        
+        // Add event listeners
+        document.querySelectorAll('.krs-check').forEach(cb => {
+            cb.addEventListener('change', hitungTotalSKS);
+        });
+        
+        function simpanKRS() {
+            alert('KRS berhasil disimpan! total SKS: ' + document.getElementById('totalSKS').textContent);
+        }
+        
+        function cetakKRS() {
+            window.print();
+        }
+        
+        // ========== FUNGSI PEMBAYARAN UKT ==========
+        function simpanPembayaran(e) {
+            e.preventDefault();
+            alert('Pembayaran berhasil diverifikasi! Tagihan akan dikonfirmasi oleh admin dalam 1x24 jam.');
+        }
+        
+        // ========== FUNGSI WISUDA ==========
+        function daftarWisuda(e) {
+            e.preventDefault();
+            alert('Pendaftaran wisuda berhasil! Silakan tunggu konfirmasi dari pihak kampus.');
+        }
+        
+        // ========== FUNGSI SKRIPSI ==========
+        function ajukanSkripsi(e) {
+            e.preventDefault();
+            alert('Judul skripsi berhasil diajukan! Menunggu persetujuan dosen pembimbing.');
+        }
+    </script>
+</body>
+</html>
